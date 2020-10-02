@@ -27,7 +27,7 @@
   let grades_html = await (await fetch("grades/")).text();
   let map = getGrade(grades_html);
   
-  document.querySelectorAll('a[class=set-id-tooltip]').forEach(function(ele) {
+  document.querySelectorAll('td a').forEach(function(ele) {
     // to hide score in closed problems, please uncomment the statement below
     // if (ele.parentNode.parentNode.innerText.includes('closed')) return;
     
@@ -53,7 +53,7 @@
       span.style.color = '#ff0000'
     }
     else if (score <= 0.6 * total) {
-      span.style.color = '#ffff00'
+      span.style.color = '#c14900'
     }
     else {
       span.style.color = '#1e90ff'
